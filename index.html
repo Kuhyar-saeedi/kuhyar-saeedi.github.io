@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuhyar Saeedi — Machine Learning & Automation Engineer</title>
+<meta name="description" content="Portfolio of Kuhyar Saeedi — ML & Automation Engineer in Rome specializing in digital twins, predictive maintenance, and industrial AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F8F6;
+    --ink:#171A1C;
+    --ink-soft:#4B5257;
+    --line:#D7DBD9;
+    --cobalt:#2244D6;
+    --cobalt-dim:#E4E9FB;
+    --mono:'IBM Plex Mono',monospace;
+    --body:'IBM Plex Sans',sans-serif;
+    --display:'Archivo',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--cobalt);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+
+  .frame{max-width:960px;margin:0 auto;padding:0 24px}
+
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+  .nav .mark{font-family:var(--mono);font-size:13px;letter-spacing:.08em}
+  .nav nav{display:flex;gap:22px}
+  .nav nav a{font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase}
+  .nav nav a:hover{color:var(--cobalt);text-decoration:none}
+
+  .hero{margin:48px 0 64px;border:1px solid var(--ink);position:relative;padding:56px 40px 0}
+  .hero .corner{position:absolute;width:14px;height:14px}
+  .hero .corner::before,.hero .corner::after{content:"";position:absolute;background:var(--ink)}
+  .hero .corner::before{width:14px;height:1px;top:7px}
+  .hero .corner::after{width:1px;height:14px;left:7px}
+  .c-tl{top:-7px;left:-7px}.c-tr{top:-7px;right:-7px}
+  .c-bl{bottom:-7px;left:-7px}.c-br{bottom:-7px;right:-7px}
+
+  .hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);margin-bottom:18px}
+  h1{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+  .hero p.lede{max-width:58ch;margin:22px 0 40px;color:var(--ink-soft);font-size:1.05rem}
+  .titleblock{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);margin:0 -40px}
+  .titleblock div{padding:12px 16px;border-right:1px solid var(--line);font-family:var(--mono);font-size:12px;line-height:1.5}
+  .titleblock div:last-child{border-right:none}
+  .titleblock .k{color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+
+  section{margin:72px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:32px}
+  .sec-head h2{font-family:var(--display);font-weight:800;font-size:1.3rem;text-transform:uppercase;letter-spacing:.02em}
+  .sec-head .ref{font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+
+  .sheet{border:1px solid var(--line);background:#fff;margin-bottom:28px}
+  .sheet-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .sheet-top h3{font-family:var(--display);font-weight:800;font-size:1.1rem}
+  .status{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--cobalt);color:var(--cobalt);border-radius:2px;background:var(--cobalt-dim)}
+  .sheet-body{padding:18px 20px;color:var(--ink-soft);font-size:.97rem}
+  .sheet-meta{display:grid;grid-template-columns:110px 1fr;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px}
+  .sheet-meta dt{padding:8px 20px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;font-size:10px;border-top:1px solid var(--line);display:flex;align-items:center}
+  .sheet-meta dd{padding:8px 20px 8px 0;border-top:1px solid var(--line)}
+  .sheet-meta dt:first-of-type,.sheet-meta dd:first-of-type{border-top:none}
+
+  .more-list{border:1px solid var(--line);background:#fff}
+  .more-item{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .more-item:last-child{border-bottom:none}
+  .more-item .t{font-weight:600;font-size:.95rem}
+  .more-item .d{color:var(--ink-soft);font-size:.9rem;flex:1 1 100%;margin-top:2px}
+  .more-item .tag{font-family:var(--mono);font-size:10px;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;align-self:center}
+
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .skill-cell{background:#fff;padding:18px 20px}
+  .skill-cell h3{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--cobalt);margin-bottom:10px}
+  .skill-cell p{font-size:.94rem;color:var(--ink-soft)}
+
+  .lang-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}
+  .lang-table td{padding:12px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+  .lang-table tr:last-child td{border-bottom:none}
+  .lang-table td.lvl{font-family:var(--mono);font-size:12px;color:var(--ink-soft);text-align:right}
+  .lang-note{margin-top:14px;font-size:.9rem;color:var(--ink-soft)}
+
+  .edu-item{background:#fff;border:1px solid var(--line);padding:18px 20px;margin-bottom:16px}
+  .edu-item h3{font-family:var(--display);font-weight:800;font-size:1rem}
+  .edu-item .inst{color:var(--ink-soft);font-size:.94rem}
+  .edu-item .dates{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.06em;margin-top:4px}
+
+  .contact-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+  .btn{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:12px 22px;border:1px solid var(--ink);color:var(--ink);transition:background .15s,color .15s}
+  .btn:hover{background:var(--ink);color:var(--paper);text-decoration:none}
+  .btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+  .btn.primary:hover{background:#1a37b0}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;margin-top:80px;font-family:var(--mono);font-size:11px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media (max-width:640px){
+    .hero{padding:36px 20px 0}
+    .titleblock{grid-template-columns:1fr;margin:0 -20px}
+    .titleblock div{border-right:none;border-top:1px solid var(--line)}
+    .titleblock div:first-child{border-top:none}
+    .sheet-meta{grid-template-columns:90px 1fr}
+    .nav nav{gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame nav">
+    <span class="mark">K.SAEEDI / PORTFOLIO</span>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="frame">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="corner c-tl"></span><span class="corner c-tr"></span>
+    <span class="corner c-bl"></span><span class="corner c-br"></span>
+    <p class="eyebrow">Digital Twins · Predictive Maintenance · Industrial AI</p>
+    <h1>Kuhyar<br>Saeedi</h1>
+    <p class="lede">
+      Machine Learning &amp; Automation Engineer building digital twins of real systems —
+      from manufacturing lines to optical inspection to techno-economic models.
+      Software engineering background, currently completing an M.Sc. in Management
+      Engineering at Tor Vergata, Rome. Open to ML / automation roles in Italy or remote.
+    </p>
+    <div class="titleblock">
+      <div><span class="k">Education</span><br>M.Sc. Management Engineering,<br>University of Rome Tor Vergata</div>
+      <div><span class="k">Background</span><br>B.Sc. Computer Software Engineering</div>
+      <div><span class="k">Location</span><br>Rome, Italy · open to remote</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-head"><h2>Featured Projects</h2><span class="ref">DATASHEETS 01–04</span></div>
+
+    <article class="sheet">
+      <div class="sheet-top">
+        <h3>Manufacturing Plant Digital Twin — Predictive Maintenance</h3>
+        <span class="status">Live · In development</span>
+      </div>
+      <div class="sheet-body">
+        A digital twin of a manufacturing line with a predictive-maintenance layer:
+        equipment telemetry feeds ML models that estimate degradation and flag
+        maintenance needs before failure. A FastAPI backend serves model outputs
+        to a live Streamlit monitoring dashboard.
+      </div>
+      <dl class="sheet-meta">
+        <dt>Stack</dt><dd>Python · FastAPI · Streamlit · Scikit-learn</dd>
+        <dt>Domain</dt><dd>Industry 4.0 · condition-based maintenance</dd>
+        <dt>Links</dt><dd><a href="https://github.com/kuhyar-saeedi/manufacturing-dt" target="_blank" rel="noopener">Code</a> · <a href="https://manufacturing-dt-yqhzjcqffrjz3whfd5jbne.streamlit.app/" target="_blank" rel="noopener">Live demo</a></dd>
+      </dl>
+    </article>
+
+    <article class="sheet">
+      <div class="sheet-top">
+        <h3>Fabric AOI Digital Twin — Automated Optical Inspection</h3>
+        <span class="status">Live</span>
+      </div>
+      <div class="sheet-body">
+        Digital twin of an automated optical inspection station for fabric quality
+        control, combining CNN-based defect detection (transfer learning) with a
+        simulated inspection line to evaluate detection performance and throughput.
+      </div>
+      <dl class="sheet-meta">
+        <dt>Stack</dt><dd>Python · CNN / transfer learning · Streamlit</dd>
+        <dt>Domain</dt><dd>Computer vision · industrial quality control</dd>
+        <dt>Links</dt><dd><a href="https://github.com/kuhyar-saeedi/fabric-aoi-digital-twin" target="_blank" rel="noopener">Code</a> · <a href="https://fabric-aoi-digital-twin-roupnarjtrzs52gtycm6c5.streamlit.app/" target="_blank" rel="noopener">Live demo</a></dd>
+      </dl>
+    </article>
+
+    <article class="sheet">
+      <div class="sheet-top">
+        <h3>Levelized Cost of Hydrogen (LCOH) — HRS Dashboard</h3>
+        <span class="status">Live</span>
+      </div>
+      <div class="sheet-body">
+        Techno-economic analysis of on-site hydrogen refueling stations using alkaline
+        electrolysis coupled with photovoltaics. Twelve system configurations compared
+        across Naples and Milan, with PVGIS solar-yield data and a full cost model
+        behind an interactive dashboard.
+      </div>
+      <dl class="sheet-meta">
+        <dt>Stack</dt><dd>Python · Streamlit · Excel modeling · PVGIS data</dd>
+        <dt>Domain</dt><dd>Clean hydrogen · energy economics</dd>
+        <dt>Links</dt><dd><a href="https://github.com/kuhyar-saeedi/lcoh-hrs-dashboard" target="_blank" rel="noopener">Code</a> · <a href="https://lcoh-hrs-dashboard-5bfusfd7iwbyzh65nvpt3t.streamlit.app/" target="_blank" rel="noopener">Live demo</a></dd>
+      </dl>
+    </article>
+
+    <article class="sheet">
+      <div class="sheet-top">
+        <h3>Human Airways Digital Twin — Surrogate Modeling</h3>
+        <span class="status">Live</span>
+      </div>
+      <div class="sheet-body">
+        Reduced-order digital twin of human airways built with surrogate modeling
+        techniques (POD/ROM, RBF interpolation, Latin hypercube sampling) —
+        demonstrating that the digital twin methodology transfers from factory
+        floors to biomedical systems.
+      </div>
+      <dl class="sheet-meta">
+        <dt>Stack</dt><dd>Python · POD/ROM · RBF surrogates · Streamlit</dd>
+        <dt>Domain</dt><dd>Reduced-order modeling · simulation</dd>
+        <dt>Links</dt><dd><a href="https://github.com/kuhyar-saeedi/human-airways-digital-twin" target="_blank" rel="noopener">Code</a> · <a href="https://human-airways-digital-twin-wvmgvehsbnkkpfe3dndrnr.streamlit.app/" target="_blank" rel="noopener">Live demo</a></dd>
+      </dl>
+    </article>
+
+    <div class="sec-head" style="margin-top:48px"><h2 style="font-size:1rem">More Work</h2><span class="ref">SELECTED</span></div>
+    <div class="more-list">
+      <div class="more-item">
+        <span class="t">Industrial Defect Detection Systems</span>
+        <span class="tag">ResNet18 · TensorFlow</span>
+        <span class="d">CNN-based defect detection with transfer learning; regression pipelines for electroplating coating property estimation.</span>
+      </div>
+      <div class="more-item">
+        <span class="t">NLP &amp; Intelligent Text Processing</span>
+        <span class="tag">Transformers · PyTorch</span>
+        <span class="d">Named entity recognition, sentiment analysis, spam classification, and text summarization pipelines.</span>
+      </div>
+      <div class="more-item">
+        <span class="t">Browser Automation &amp; Scheduling Bot</span>
+        <span class="tag">Selenium · Telegram API</span>
+        <span class="d">Automated browser workflows for appointment monitoring and form interaction, with real-time Telegram notifications.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="sec-head"><h2>Skills</h2><span class="ref">CAPABILITY MATRIX</span></div>
+    <div class="skill-grid">
+      <div class="skill-cell">
+        <h3>Machine Learning</h3>
+        <p>Deep learning, computer vision, NLP, transformers, transfer learning, predictive maintenance, surrogate models (POD/ROM, RBF), LHS.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Software &amp; Frameworks</h3>
+        <p>Python, R, C++, C# · PyTorch, TensorFlow, Keras, Scikit-learn, Pandas, NumPy · FastAPI, Streamlit, Git, MySQL.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Automation</h3>
+        <p>Selenium, web scraping, REST APIs, browser and workflow automation, Telegram bot integration.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Operations &amp; Economics</h3>
+        <p>Production management, MRP, inventory policies, lean methods, techno-economic and levelized-cost modeling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="sec-head"><h2>Education</h2><span class="ref">ACADEMIC RECORD</span></div>
+    <div class="edu-item">
+      <h3>M.Sc. Management Engineering</h3>
+      <div class="inst">University of Rome Tor Vergata — coursework highlights: AI Applications in Manufacturing (30 e lode/30), Clean Hydrogen Technologies (30 e lode/30), Smart Factories (30/30), Digital Economy (29/30)</div>
+      <div class="dates">SEP 2025 — EXPECTED SEP 2027</div>
+    </div>
+    <div class="edu-item">
+      <h3>B.Sc. Computer Software Engineering</h3>
+      <div class="inst">University of Urmia</div>
+      <div class="dates">SEP 2012 — SEP 2017</div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages">
+    <div class="sec-head"><h2>Languages</h2><span class="ref">CEFR LEVELS</span></div>
+    <table class="lang-table">
+      <tr><td>Persian, Kurdish</td><td class="lvl">NATIVE</td></tr>
+      <tr><td>English</td><td class="lvl">C1 · TOEFL iBT 103</td></tr>
+      <tr><td>French</td><td class="lvl">B2</td></tr>
+      <tr><td>Italian</td><td class="lvl">B1</td></tr>
+      <tr><td>German</td><td class="lvl">A2</td></tr>
+    </table>
+    <p class="lang-note">
+      Consistent self-directed learner — a 1,877-day daily streak on
+      <a href="https://www.duolingo.com/profile/KuhyAr" target="_blank" rel="noopener">Duolingo</a>.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sec-head"><h2>Contact</h2><span class="ref">GET IN TOUCH</span></div>
+    <p style="max-width:56ch;color:var(--ink-soft);margin-bottom:20px">
+      Open to internships and junior roles in machine learning and industrial
+      automation, in Italy or remote.
+    </p>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:saeedi.kuhyar@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/kuhyar-saeedi" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/kuhyar" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="cv-kuhyar-saeedi.pdf" download>Download CV</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="frame">
+  <span>© 2026 KUHYAR SAEEDI</span>
+  <span>ROME, IT · SHEET 1/1</span>
+</footer>
+
+</body>
+</html>
